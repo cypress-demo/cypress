@@ -1,0 +1,22 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Cypress for automation",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulqe/cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulqe/cypress/issues"
+  },
+  "homepage": "https://github.com/rahulqe/cypress#readme",
+  "dependencies": {
+    "cypress": "^10.6.0"
+  }
+}
