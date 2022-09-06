@@ -45,37 +45,39 @@ To get accustomed to using cypress, run through the [getting started tutorial](h
 
 ### Skills
 
-* Basic understanding of [JS](https://www.w3schools.com/js/default.asp)/[TS](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) programming concepts(*e.g, variables, functions, classes, iterations, array/lists, dictionaries, etc.*)
-* [GIT](https://git-scm.com/docs)
-* [CSS](https://www.w3schools.com/cssref/css_selectors.asp), [XPATH](https://devhints.io/xpath) selectors and [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) attribute basics
-* Cypress concepts - More info below
+- Basic understanding of [JS](https://www.w3schools.com/js/default.asp)/[TS](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) programming concepts(_e.g, variables, functions, classes, iterations, array/lists, dictionaries, etc._)
+- [GIT](https://git-scm.com/docs)
+- [CSS](https://www.w3schools.com/cssref/css_selectors.asp), [XPATH](https://devhints.io/xpath) selectors and [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) attribute basics
+- Cypress concepts - More info below
 
 ### System
 
-* **OS Requirements:** ![MacOs](https://img.shields.io/badge/macOs-10.9+-blue)  ![Linux](https://img.shields.io/badge/Linux-12.4+-blue)  ![Windows](https://img.shields.io/badge/64%20Bit%20Windows-7+-blue)
-* **Browsers:** ![chrome](https://img.shields.io/badge/chrome-64+-blue)  ![Edge](https://img.shields.io/badge/edge-79+-blue)  ![Firefox](https://img.shields.io/badge/firefox-86+-blue)
-* **Hardware:**
-  * CPU:
+- **OS Requirements:** ![MacOs](https://img.shields.io/badge/macOs-10.9+-blue) ![Linux](https://img.shields.io/badge/Linux-12.4+-blue) ![Windows](https://img.shields.io/badge/64%20Bit%20Windows-7+-blue)
+- **Browsers:** ![chrome](https://img.shields.io/badge/chrome-64+-blue) ![Edge](https://img.shields.io/badge/edge-79+-blue) ![Firefox](https://img.shields.io/badge/firefox-86+-blue)
+- **Hardware:**
 
-    * 2 CPUs to run cypress
-    * 1 additional if video recording is turned enabled in cypress config
-  * Memory:
+  - CPU:
 
-    * 4 GB min, 8GB+ for longer test runs
+    - 2 CPUs to run cypress
+    - 1 additional if video recording is turned enabled in cypress config
+
+  - Memory:
+
+    - 4 GB min, 8GB+ for longer test runs
 
 ### Software
 
-* [Node.js](https://nodejs.org/en/download/): 12 or 14 and above
-* [Cypress](#installation): 9 and above
-* [Microsoft Visual Studio Code](https://code.visualstudio.com/): Latest
-* [Git](https://git-scm.com/download): Latest
-* [Yarn (Optional)](https://classic.yarnpkg.com/en/docs/install): If you are using a package manager
+- [Node.js](https://nodejs.org/en/download/): 12 or 14 and above
+- [Cypress](#installation): 9 and above
+- [Microsoft Visual Studio Code](https://code.visualstudio.com/): Latest
+- [Git](https://git-scm.com/download): Latest
+- [Yarn (Optional)](https://classic.yarnpkg.com/en/docs/install): If you are using a package manager
 
 ## Installation
 
 ### Config
 
-There are multiple ways to set configurations for NPM. One way to provide is by setting the values in `.npmrc` files
+If you are working in a internal network, there are multiple ways to set configurations for NPM. One way to provide is by setting the values in `.npmrc` files
 
 ```@company:registry=https://company.internal.repo.url
 CYPRESS_DOWNLOAD_MIRROR=https://company.internal.cypress.mirror.url
@@ -95,7 +97,7 @@ To know more on editing `.npmrc`, [read this page](https://docs.npmjs.com/cli/v8
 ```bash
 $ mkdir workspace
 $ cd workspace
-$ git clone https://github.com/beyondgeek/beyondgeek.git
+$ git clone https://github.com/cypress-demo/cypress.git
 ```
 
 4. Provide your username and the token generated from Step 2.
@@ -137,8 +139,8 @@ $ cypress --version
 <details><summary>Issues downloading dependencies</summary>
 <p>
 
-* Check for _.npmrc_ configurations. Delete any multiple location overrides
-* Delete _node_modules_ / _package-lock.json_ folder and retry installation
+- Check for _.npmrc_ configurations. Delete any multiple location overrides
+- Delete _node_modules_ / _package-lock.json_ folder and retry installation
 
 </p>
 </details>
@@ -167,12 +169,11 @@ $ npx cypress verify
 <details><summary>Issues with folder permission or write issues</summary>
 <p>
 
-* windows: try running command prompt in elevated permission
-* linux/mac os: use chmod command in terminal to set 777 user permission for folder/file having permission issue.
+- windows: try running command prompt in elevated permission
+- linux/mac os: use chmod command in terminal to set 777 user permission for folder/file having permission issue.
 
 </p>
 </details>
-
 
 # Test Run
 
