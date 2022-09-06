@@ -8,16 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rahulqe/cypress.git"
+    "url": "git+https://github.com/cypress-demo/cypress.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rahulqe/cypress/issues"
+    "url": "https://github.com/cypress-demo/cypress/issues"
   },
-  "homepage": "https://github.com/rahulqe/cypress#readme",
+  "homepage": "https://github.com/cypress-demo/cypress#readme",
   "dependencies": {
-    "cypress": "^9.6.0",
     "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "cypress": "^9.7.0"
   }
 }
