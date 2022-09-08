@@ -58,12 +58,10 @@ describe("Validate Actions", () => {
     // matching text using regular expression
     expect("Health and Wellness").to.match(/wellness$/i);
     // check if the variable is defined, is a string, and has characters
-    const orgId = "4AB001C";
-    expect(orgId, "org id").to.be.a("string").and.not.be.empty;
+    expect("4AB001C", "org id").to.be.a("string").and.not.be.empty;
     // check if the response status code is successful
     expect(204, "status code").to.be.within(200, 399);
     // check if a value is one of the three allowed choices
-    const fruit = "";
     expect("Medical").to.be.oneOf(["Medical", "Dental", "Pharmacy"]);
     // generic predicate function check using the "satisfy" assertion
     expect("Health").to.satisfy((s) => typeof s === "string" && s.length === 6);
