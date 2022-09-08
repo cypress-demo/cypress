@@ -50,7 +50,7 @@ echo "\n\n\033[1;34mInstall visual studio code if not done already: https://code
 
 echo "\n\n\033[1;47m----------------STARTTING : Cloning project--------------------\033[0m\n\n"
 
-read -p "Do you want to clone a new git project, Type Y or N ?: " -n 1 -r
+read -p "Do you want to clone a the cypress demo project using https? This will prompt you to enter your username and personal access token. If you dont have them setup yet, you can also download the demo project as zip and re-run this command, just to continue with cypress setup, Type Y or N ?: " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
 	echo "\n----"
@@ -58,14 +58,12 @@ then
 	echo "\n----"
 	read -p 'Enter your git email address : ' EMAIL
 	echo "\n----"
-	read -p 'Enter your git project cloning url : ' URL
-	echo "\n----"
 	git config --global user.name $USERNAME;
 	git config --global user.email $EMAIL;
 	echo "\n\n\033[1;30m A new working directory 'workspace' will be created, inside that the new project will be cloned \033[0m\n";
 	mkdir workspace;
 	cd workspace;
-	git clone $URL;		
+	git clone https://github.com/cypress-demo/cypress.git;		
 	echo "\n\n\033[1;47m----------------STARTTING : Installing cypress--------------------\033[0m\n\n"
 	read -p "Do you want to build the project and install cypress, Type Y or N ?: " -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]
@@ -83,5 +81,18 @@ else
 	echo "\n\033[1;32mYou are all set!! If you want to clone a different repo, run this file again!\033[0m"
 		
 fi
+echo "\n\n\033[1;47m----------------STARTTING : Installing cypress--------------------\033[0m\n\n"
+read -p "Continue with Y only if you have entered N above question. Is there a manually downloaded project, for which you want to install cypress?, Type Y or N ?: " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+	then
+		cd cypress;
+		echo "\n\033[1;30m Starting cypress installation... \033[0m\n";
+		npm install cypress --save-dev;
+		echo "\n\033[1;30m Cypress installed: try running npx cypress open inside the project to launch the runner... \033[0m\n";
+	else
+		echo "\n\033[1;30m Exiting cypress installation... \033[0m\n";
+fi	
+echo "\n\033[1;30m If there is a issue downloading cypress in internal network, refer the readme file to update your .npmrc configuration \033[0m\n";
+echo "\n\n\033[1;47m------------------END : Installing cypress--------------------\033[0m\n\n"
 
 echo "\n\n\033[1;47m------------------END : Cloning project--------------------\033[0m\n\n"
