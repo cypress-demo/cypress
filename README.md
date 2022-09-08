@@ -75,6 +75,12 @@ To get accustomed to using cypress, run through the [getting started tutorial](h
 
 ## Installation
 
+**NOTE:** Mac users can [download the shell script file from here](https://github.com/cypress-demo/cypress/blob/main/assets/mac-setup.sh) to perform a easy setup of the demo project. After you download the project, run the shell script using below command. If you are trying to run the setup in internal network, go through the config setup step below.
+
+```bash
+sudo sh mac-setup.sh
+```
+
 ### Config
 
 If you are working in a internal network, there are multiple ways to set configurations for NPM. One way to provide is by setting the values in `.npmrc` files
