@@ -3,14 +3,14 @@ describe('test suite for network intercepting', () => {
     beforeEach(() => {
         cy.setCookie("oo_inv_reprompt", "1");
         cy.visit("https://www.cigna.com/medicare/");
+        cy.get('ciapp-medicare-plan-finder').shadow().find('cipublic-input').shadow().find('input').type('63043');
     })
 
     it('test for intercepting an api response', () => {
         
-        cy.get('ciapp-medicare-plan-finder').shadow().find('cipublic-input').shadow().find('input').type('63043');
         cy.intercept('**/igse/connecturedrx2?action=plan-compare-search*').as('planCompareSearchResponse');
         cy.get('ciapp-medicare-plan-finder').shadow().find('cipublic-input cipublic-button').shadow().find('button').click();
-        cy.wait('@planCompareSearchResponse', {timeout: 2000});
+        cy.wait('@planCompareSearchResponse');
 
         cy.get('igse-app').shadow().find('igse-plans-view').shadow().find('cipublic-tabs').as('tabs');
     
@@ -38,8 +38,6 @@ describe('test suite for network intercepting', () => {
 
     it('test for stubbing api response', () => {
         
-        cy.get('ciapp-medicare-plan-finder').shadow().find('cipublic-input').shadow().find('input').type('63043');
-
         //stubbed data is stored in a json file and stored in fixtures folder
         cy.intercept('**/igse/connecturedrx2?action=plan-compare-search*', {fixture: 'stubbed-plans.json'}).as('planCompareSearchResponse');
         

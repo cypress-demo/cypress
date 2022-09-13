@@ -51,19 +51,20 @@ describe('api test suite', () => {
     it('nested api request call', () => {
         
         cy.request(fipFinderReqSpec).then(fipResponse => {
-            console.log(fipResponse);
+            cy.log(fipResponse.body);
             expect(fipResponse.status).to.be.eq(200);
             
             cy.request(sessionReqSpec).then(sessionResponse => {
-                console.log(sessionResponse);
+                cy.log(sessionResponse.body);
                 expect(fipResponse.status).to.be.eq(200);
 
                 planSearchReqSpec.qs['fips'] = fipResponse.body[0].CountyFIPS;
                 planSearchReqSpec.qs['sessionID'] = sessionResponse.body[0].SessionID;
 
                 cy.request(planSearchReqSpec).then(planSearchResponse => {
-                    console.log(planSearchResponse);
+                    cy.log(planSearchResponse.body);
                     expect(planSearchResponse.status).to.be.eq(200);
+                    expect(planSearchResponse.body.MedicarePlans).to.have.length.greaterThan(0);
                 })
             })
 
