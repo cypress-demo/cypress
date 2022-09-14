@@ -4,7 +4,9 @@
   "description": "Cypress for automation",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "run-all-chrome": "npx cypress run --spec \"**/integration/*.spec.ts\" --headed --browser chrome",
+    "run-spec-electron": "npx cypress run --spec \"**/integration/api-request.spec.ts\" --headed",
+    "run-headless": "npx cypress run --spec \"**/integration/assertions.spec.ts\""
   },
   "repository": {
     "type": "git",
